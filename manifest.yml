@@ -1,0 +1,15 @@
+modules:
+  function:
+resources:
+  - key: main
+    path: static/frontend/dist
+    tunnel:
+      port: 5173
+permissions:
+  content:
+    styles:
+      - unsafe-inline
+  scopes:
+app:
+  runtime:
+    name: nodejs18.x
