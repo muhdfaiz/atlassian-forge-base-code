@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Cache and generated files
+tsconfig.tsbuildinfo
+out/
+
+build/
+
+idea/
+
+static/frontend/dist/

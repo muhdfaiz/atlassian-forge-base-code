@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "importHelpers": false,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "jsxImportSource": "@emotion/react",
+    "outDir": "./build",
+    "target": "es2017",
+    "types": ["jest", "node", "@emotion/react/types/css-prop", "history", "@forge/resolver"]
+  },
+  "include": ["src"]
+}

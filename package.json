@@ -1,0 +1,53 @@
+{
+  "name": "case-exchange",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "Sync JSM incidents with Service Manager.",
+  "private": true,
+  "engines": {
+    "node": "20",
+    "npm": "10"
+  },
+  "types": "index.d.ts",
+  "devDependencies": {
+    "@atlaskit/eslint-plugin-design-system": "^10.10.0",
+    "@eslint/js": "^9.5.0",
+    "@forge/cli": "^6.20",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/eslint__js": "^8.42.3",
+    "@types/jest": "24",
+    "@types/lodash": "^4.17.5",
+    "@types/node": "^20.14.9",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^7.14.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "forge-deploy": "forge deploy --no-verify",
+    "forge-install": "forge install",
+    "forge-install-list": "forge install list",
+    "forge-webtrigger": "forge webtrigger",
+    "forge-logs": "forge logs",
+    "forge-lint": "forge lint --fix",
+    "forge-lint:verbose": "forge lint --verbose",
+    "forge-login": "forge login",
+    "forge-register": "forge register",
+    "forge-restore": "forge restore",
+    "forge-tunnel": "forge tunnel",
+    "lint": "npm run forge-lint"
+  },
+  "dependencies": {
+    "@forge/api": "^3.7.1",
+    "@forge/events": "^0.8.37",
+    "@forge/resolver": "^1.5.35",
+    "collect.js": "^4.36.1",
+    "config": "^3.3.11",
+    "lodash": "^4.17.21"
+  }
+}

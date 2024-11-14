@@ -1,0 +1,90 @@
+{
+  "name": "case-exchange",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@atlaskit/analytics-next": "^9.2.0",
+    "@atlaskit/app-provider": "latest",
+    "@atlaskit/atlassian-navigation": "4.2.1",
+    "@atlaskit/code": "^15.4.0",
+    "@atlaskit/css-reset": "latest",
+    "@atlaskit/dropdown-menu": "^12.13.4",
+    "@atlaskit/ds-lib": "^2.3.0",
+    "@atlaskit/dynamic-table": "^14.18.2",
+    "@atlaskit/flag": "^15.6.5",
+    "@atlaskit/form": "^10.4.5",
+    "@atlaskit/icon": "^22.5.1",
+    "@atlaskit/logo": "14.1.0",
+    "@atlaskit/menu": "^2.6.1",
+    "@atlaskit/modal-dialog": "^12.14.4",
+    "@atlaskit/page": "12.5.0",
+    "@atlaskit/page-header": "^10.7.3",
+    "@atlaskit/page-layout": "3.4.3",
+    "@atlaskit/popup": "1.19.4",
+    "@atlaskit/primitives": "^10.0.0",
+    "@atlaskit/select": "^17.11.4",
+    "@atlaskit/side-navigation": "^3.3.4",
+    "@atlaskit/table-tree": "^9.10.3",
+    "@atlaskit/tag": "^12.3.3",
+    "@atlaskit/textfield": "^6.4.1",
+    "@atlaskit/tokens": "^1.53.1",
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@forge/api": "^3.7.1",
+    "@forge/bridge": "^3.4.0",
+    "@tanstack/react-query": "^5.50.1",
+    "bind-event-listener": "^3.0.0",
+    "html-react-parser": "^5.1.10",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.1",
+    "react-resource-router": "^0.28.0",
+    "react-router": "^6.24.0",
+    "react-router-dom": "^6.24.0",
+    "styled-components": "^3.2.6",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@remix-run/node": "^2.10.2",
+    "@tanstack/eslint-plugin-query": "^5.50.1",
+    "@tanstack/react-query-devtools": "^5.50.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "typescript": "^5.5.3",
+    "vite": "^4.5.3"
+  },
+  "scripts": {
+    "dev": "vite",
+    "lint-dev": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && vite",
+    "build": "vite build",
+    "tscNuild": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

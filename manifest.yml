@@ -1,0 +1,29 @@
+modules:
+  function:
+    - key: sampleResolver
+      handler: resolver.handler
+    - key: syncNewServiceRequest
+      handler: listener.syncNewServiceRequest
+  jira:globalPage:
+    - key: setting
+      resource: main
+      resolver:
+        function: sampleResolver
+      title: Base App
+      layout: blank
+resources:
+  - key: main
+    path: static/frontend/dist
+    tunnel:
+      port: 5173
+permissions:
+  content:
+    styles:
+      - unsafe-inline
+  scopes:
+    - read:jira-work
+    - write:jira-work
+app:
+  runtime:
+    name: nodejs20.x
+  # id: add your app id here
