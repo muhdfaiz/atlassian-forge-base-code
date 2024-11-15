@@ -30,4 +30,3 @@ This repository is a boilerplate for building applications with Forge.
    forge deploy
    forge install
 
-
