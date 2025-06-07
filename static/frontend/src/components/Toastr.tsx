@@ -9,51 +9,51 @@ import { ToastrContent } from '../interfaces/toastr.interface.ts';
 import { useAppStore } from '../store/appStore.ts';
 
 export default function Toastr() {
-  const { toastr, removeToastr } = useAppStore();
+	const { toastr, removeToastr } = useAppStore();
 
-  return (
-    <FlagGroup onDismissed={removeToastr}>
-      {toastr.map((toastrContent: ToastrContent) => {
-        return (
-          <AutoDismissFlag
-            id={toastrContent.id}
-            icon={
-              toastrContent.icon === ToastrIcon.SUCCESS ? (
-                <SuccessIcon
-                  primaryColor={token('color.icon.success')}
-                  label="Success"
-                  size="medium"
-                />
-              ) : toastrContent.icon === ToastrIcon.INFO ? (
-                <InfoIcon
-                  primaryColor={token('color.icon.information')}
-                  label="Info"
-                  size="medium"
-                />
-              ) : toastrContent.icon === ToastrIcon.WARNING ? (
-                <WarningIcon
-                  primaryColor={token('color.icon.warning')}
-                  label="Info"
-                  size="medium"
-                />
-              ) : toastrContent.icon === ToastrIcon.ERROR ? (
-                <ErrorIcon
-                  primaryColor={token('color.icon.danger')}
-                  label="Info"
-                  size="medium"
-                />
-              ) : (
-                ''
-              )
-            }
-            appearance={toastrContent.type}
-            key={toastrContent.id}
-            title={toastrContent.title}
-            description={toastrContent.message}
-            actions={toastrContent.actions}
-          />
-        );
-      })}
-    </FlagGroup>
-  );
+	return (
+		<FlagGroup onDismissed={removeToastr}>
+			{toastr.map((toastrContent: ToastrContent) => {
+				return (
+					<AutoDismissFlag
+						id={toastrContent.id}
+						icon={
+							toastrContent.icon === ToastrIcon.SUCCESS ? (
+								<SuccessIcon
+									primaryColor={token('color.icon.success')}
+									label="Success"
+									size="medium"
+								/>
+							) : toastrContent.icon === ToastrIcon.INFO ? (
+								<InfoIcon
+									primaryColor={token('color.icon.information')}
+									label="Info"
+									size="medium"
+								/>
+							) : toastrContent.icon === ToastrIcon.WARNING ? (
+								<WarningIcon
+									primaryColor={token('color.icon.warning')}
+									label="Info"
+									size="medium"
+								/>
+							) : toastrContent.icon === ToastrIcon.ERROR ? (
+								<ErrorIcon
+									primaryColor={token('color.icon.danger')}
+									label="Info"
+									size="medium"
+								/>
+							) : (
+								''
+							)
+						}
+						appearance={toastrContent.type}
+						key={toastrContent.id}
+						title={toastrContent.title}
+						description={toastrContent.message}
+						actions={toastrContent.actions}
+					/>
+				);
+			})}
+		</FlagGroup>
+	);
 }

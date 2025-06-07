@@ -2,7 +2,7 @@ modules:
   function:
     - key: sampleResolver
       handler: resolver.handler
-    - key: syncNewServiceRequest
+    - key: sampleListener
       handler: listener.syncNewServiceRequest
   jira:globalPage:
     - key: setting
@@ -26,4 +26,4 @@ permissions:
 app:
   runtime:
     name: nodejs20.x
-  # id: add your app id here
+  id: ari:cloud:ecosystem::app/05ebffdf-db1f-4bbc-afde-f81b5b95471b

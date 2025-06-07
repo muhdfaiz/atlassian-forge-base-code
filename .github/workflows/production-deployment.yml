@@ -1,0 +1,38 @@
+name: Production Deployment
+
+on:
+  push:
+    branches:
+      - production-deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      FORGE_EMAIL: ${{ secrets.FORGE_EMAIL }}
+      FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Code linting
+        run: |
+          npm install
+          npm install --global @forge/cli
+          forge settings set usage-analytics true
+          forge lint -e production
+
+      - name: Install Dependencies and Forge CLI
+        run: |
+          npm install
+          npm install --global @forge/cli
+          forge settings set usage-analytics true
+
+      - name: Build UI inside static folder
+        working-directory: static/frontend
+        run: |
+          npm install --legacy-peer-deps
+          npm run build
+
+      - name: Deploy Forge To Production Environment
+        run: forge deploy -e production

@@ -1,3 +1,3 @@
-export const syncNewServiceRequest = (event) => {
-  console.log(event);
+export const sampleListener = (event: any) => {
+	console.log(event);
 };

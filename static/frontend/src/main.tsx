@@ -9,13 +9,13 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 const queryClient = new QueryClient();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppProvider>
-      <QueryClientProvider client={queryClient}>
-        <App />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </AppProvider>
-  </React.StrictMode>,
-  document.getElementById('root') as HTMLElement,
+	<React.StrictMode>
+		<AppProvider>
+			<QueryClientProvider client={queryClient}>
+				<App />
+				<ReactQueryDevtools initialIsOpen={false} />
+			</QueryClientProvider>
+		</AppProvider>
+	</React.StrictMode>,
+	document.getElementById('root') as HTMLElement,
 );
