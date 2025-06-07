@@ -21,6 +21,11 @@ jobs:
         with:
           node-version: 20
 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
       - name: Install packages
         run: npm ci
 
