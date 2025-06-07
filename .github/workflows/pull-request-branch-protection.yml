@@ -16,14 +16,14 @@ jobs:
         run: echo ${GITHUB_HEAD_REF}
 
       - name: Dump GitHub Env Variables GITHUB_REF_NAME
-        run: echo ${GITHUB_BASE_REF} != uat
+        run: echo [ [ ${ GITHUB_BASE_REF } != uat ] ]
 
       - name: Dump GitHub Env Variables GITHUB_BASE_REF
-        run: echo ${GITHUB_BASE_REF} != 'hotfix/'*
+        run: echo [ [ ${ GITHUB_BASE_REF } != 'hotfix/'* ] ]
 
       - name: Check If Pull Request Branch Is Allowed
         run: |
-          if [[ ${GITHUB_BASE_REF} != 'hotfix/'* && ${GITHUB_BASE_REF} != uat && ${GITHUB_HEAD_REF} = main ]]; 
+          if [[ ${GITHUB_HEAD_REF} != 'hotfix/'* && ${GITHUB_HEAD_REF} != uat && ${GITHUB_BASE_REF} = main ]]; 
           then
             echo "Error: Pull request for main branch must come from 'uat' or 'hotfix/' branch"
             exit 1
