@@ -5,6 +5,9 @@ on:
       - '**'
       - '!production-deployment'
       - '!development-deployment'
+      - '!uat'
+      - '!main'
+      - '!develop'
 
   pull_request:
     branches:
