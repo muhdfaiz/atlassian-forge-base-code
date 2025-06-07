@@ -1,0 +1,22 @@
+name: Deployment Branch Protection
+
+on:
+  pull_request:
+    branches:
+      - development-deployment
+      - production-deployment
+
+jobs:
+  check-pull-request-deployment-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check If Pull Request Branch Is Allowed
+        run: |
+          if [[ ${GITHUB_BASE_REF} = production-deployment && ${GITHUB_HEAD_REF} != main ]]; 
+          then
+            echo "Error: Pull request for production-deployment must come from 'main' branch"
+            exit 1
+          elif [[ ${GITHUB_BASE_REF} = development-deployment && ${GITHUB_HEAD_REF} != develop ]]; 
+          then
+            echo "Error: Pull request for development-deployment must come from 'develop' branch"
+          fi
