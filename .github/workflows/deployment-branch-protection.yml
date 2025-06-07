@@ -10,6 +10,23 @@ jobs:
   check-pull-request-deployment-branch:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Dump GitHub Env Variables GITHUB_REF
+        run: echo ${GITHUB_REF}
+
+      - name: Dump GitHub Env Variables GITHUB_REF_NAME
+        run: echo ${GITHUB_REF_NAME}
+
+      - name: Dump GitHub Env Variables GITHUB_BASE_REF
+        run: echo ${GITHUB_BASE_REF}
+
+      - name: Dump GitHub Env Variables GITHUB_HEAD_REF
+        run: echo ${GITHUB_HEAD_REF}
+
       - name: Check If Pull Request Branch Is Allowed
         run: |
           if [[ ${GITHUB_BASE_REF} = production-deployment && ${GITHUB_HEAD_REF} != main ]]; 
