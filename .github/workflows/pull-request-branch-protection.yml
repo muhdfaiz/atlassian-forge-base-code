@@ -9,9 +9,21 @@ jobs:
   check-pull-request-branch:
     runs-on: ubuntu-latest
     steps:
+      - name: Echo GITHUB_BASE_REF Env Variables
+        run: echo ${GITHUB_BASE_REF}
+
+      - name: Echo GITHUB_HEAD_REF Env Variables
+        run: echo ${GITHUB_HEAD_REF}
+
+      #      - name: Dump GitHub Env Variables GITHUB_REF_NAME
+      #        run: [ [ ${ GITHUB_BASE_REF } != uat ] ]
+      #
+      #      - name: Dump GitHub Env Variables GITHUB_BASE_REF
+      #        run: [ [ ${ GITHUB_BASE_REF } != 'hotfix/'* ] ]
+
       - name: Check If Pull Request Branch Is Allowed
         run: |
-          if [[ ( ! startsWith(github.base_ref, 'hotfix/') && ! ${GITHUB_BASE_REF} = uat ) && ${GITHUB_HEAD_REF} = main ]]; 
+          if [[ ${GITHUB_HEAD_REF} != 'hotfix/'* && ${GITHUB_HEAD_REF} != uat && ${GITHUB_BASE_REF} = main ]]; 
           then
             echo "Error: Pull request for main branch must come from 'uat' or 'hotfix/' branch"
             exit 1

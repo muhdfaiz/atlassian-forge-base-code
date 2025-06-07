@@ -2,11 +2,13 @@ name: Development Deployment
 
 on:
   pull_request:
+    types: [closed]
     branches:
       - development-deployment
 
 jobs:
-  deploy:
+  deploy_if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       FORGE_EMAIL: ${{ secrets.FORGE_EMAIL }}
