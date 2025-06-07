@@ -2,9 +2,9 @@ name: Verify code using ESLint and Prettier
 on:
   push:
     branches:
-      - main
-      - develop
-      - uat
+      - '**'
+      - '!production-deployment'
+      - '!development-deployment'
 
   pull_request:
     branches:
@@ -13,7 +13,7 @@ on:
       - uat
 
 jobs:
-  lint:
+  linting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,5 +27,14 @@ jobs:
       - name: Prettier
         run: npm run prettier:check
 
+      - name: Prettier
+        run: npm run prettier:check
+
       - name: ESLint
         run: npm run lint:check
+
+      - name: Forge Linter
+        run: |
+          npm install --global @forge/cli
+          forge settings set usage-analytics true
+          forge lint
