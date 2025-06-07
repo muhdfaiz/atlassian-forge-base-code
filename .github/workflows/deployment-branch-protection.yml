@@ -2,6 +2,7 @@ name: Deployment Branch Protection
 
 on:
   pull_request:
+    types: [reopened, opened]
     branches:
       - development-deployment
       - production-deployment
