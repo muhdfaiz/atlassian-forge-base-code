@@ -8,9 +8,9 @@ on:
 
   pull_request:
     branches:
-      - main
-      - develop
-      - uat
+      - '**'
+      - '!production-deployment'
+      - '!development-deployment'
 
 jobs:
   linting:
@@ -25,6 +25,12 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+
+      - name: Dump GitHub Env Variables GITHUB_REF_NAME
+        run: echo ${GITHUB_REF_NAME}
+
+      - name: Dump GitHub Env Variables GITHUB_HEAD_REF
+        run: echo ${GITHUB_HEAD_REF}
 
       - name: Install packages
         run: npm ci
