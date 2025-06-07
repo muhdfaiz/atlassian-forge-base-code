@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Check If Pull Request Branch Is Allowed
         run: |
-          if [[ ! startsWith(github.base_ref, 'hotfix/') && ! ${GITHUB_BASE_REF} = uat && ${GITHUB_HEAD_REF} = main ]]; 
+          if [[ ! ${GITHUB_BASE_REF} == 'hotfix/'* && ! ${GITHUB_BASE_REF} = uat && ${GITHUB_HEAD_REF} = main ]]; 
           then
             echo "Error: Pull request for main branch must come from 'uat' or 'hotfix/' branch"
             exit 1
